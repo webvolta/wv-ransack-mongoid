@@ -5,7 +5,7 @@ module Ransack
       nodes.inject(&:and)
     end
 
-    def visit_and(object)
+    def visit_or(object)
       nodes = object.values.map { |o| accept(o) }.compact
       nodes.inject(&:or)
     end
